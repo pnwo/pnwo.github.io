@@ -2,8 +2,45 @@
 <html>
 	<head>
 		<title>主页</title>
+		<style>
+			h1 {
+				text-align: center;
+			}
+		</style>
 	</head>
 	<body>
 		<h1>Hey, User</h1>
+		<h2 style="text-align: center;">Free, 免费节点: </h2>
+		
+			<table border="2" style="border-collapse: collapse; width: 100%; text-align: center;">
+			<tr>
+				<td>https://64.83.13.124:2096/sub/idyqxp4ub5iye3w2</td>
+			</tr>
+		</table>
+
+		<!-- 1. 定义一个带有唯一 id 的 h3 标签 -->
+		<h3 id="current-date">正在加载日期...</h3>
+
+		<script>
+        	// 2. 创建一个函数来获取并格式化当前日期
+	        	function displayCurrentDate() {
+            		const now = new Date(); // 获取当前系统时间对象
+            		const year = now.getFullYear(); // 获取完整的年份 (例如 2026)
+            		const month = now.getMonth() + 1; // 获取月份 
+			(注意：JS月份从0开始，所以要加1)
+            		const date = now.getDate(); // 获取当前日 (1-31)
+
+            	// 3. 拼接成 "XXXX年X月X日" 的字符串格式
+            		const dateString = `${year}年${month}月${date}日`;
+
+            	// 4. 将拼接好的日期字符串写入到指定的 h3 标签中
+            		document.getElementById('current-date').innerText = dateString;
+        	}
+
+        	// 5. 当页面加载完成后立即执行该函数
+        	window.onload = displayCurrentDate;
+    		</script>
+		
+
 	</body>
 </html>
