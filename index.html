@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="zh-cn">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,45 +8,67 @@
 			h1 {
 				text-align: center;
 			}
+			h2 {
+                                text-align: center;
+                        }
+					
 			body {
 				font-family: "Menlo", "PingFang SC", sans-serif;
+				
+				background-color: #6eb396;
+        	                color: #ffffff;
+	                        margin: 0;
 			}
-			td {
-				font-size: 10px;
-			}
+			
+			.text-center-box {
+				text-align: center;
+				padding: 20px;
+			}			
+			
+		/* 提升用户体验：鼠标悬停在段落上时显示为“小手”图标，并带有轻轻的变色提示 */
+        	p.copyable {
+	            cursor: pointer;
+        	    padding: 10px;
+	            background-color: #6eb396;
+	            transition: background-color 0.2s;
+        	    display: inline-block; /* 让背景色包裹文字长度 */
+	        }
+	        p.copyable:hover {
+        	    background-color: #e0f0ea; /* 鼠标悬停时加深 */
+        	}
 		</style>
 	</head>
 	<body>
-		<h1>Hey, User</h1>
-		<h2 style="text-align: center;">Free, 免费美国网络: </h2>
-		
-			<table border="2" style="border-collapse: collapse; width: 100%; text-align: center;">
-			<tr>					
-				<td>https://23.94.184.78:8080/sub/e65pg8cgyq77y78x</td>
-			</tr>
-		</table>
-
-		<h3 id="current-date" align="center">正在加载日期...</h3>
-
-		<script>
-	        	function displayCurrentDate() {
-            		const now = new Date(); 
-            		const year = now.getFullYear(); 
-            		const month = now.getMonth() + 1; 
+		<h1>这里不定时分享一些免费的网络/[节点]/[订阅链接]</h1>
+		<h2>复制下面的链接粘贴到软件, 即可访问国外的内容</h2>
 			
-            		const date = now.getDate(); 
+			<div class="text-center-box">
+				<p>----------</p>
+	                	
+				<p class="copyable" onclick="copyText(this)">
+				https://23.94.184.78:8080/sub/e65pg8cgyq77y78x
+				</p>
 
-            	
-            		const dateString = `${year}年${month}月${date}日`;
+        	        	<p>----------</p>
+			</div>
+		
 
-            		document.getElementById("current-date").innerText = dateString;
-        	}
+			<script>
+			        // 2. 编写复制的核心逻辑
+		        	function copyText(element) {
+		            // 获取当前被点击元素内的文本内容
+		            const textToCopy = element.innerText;
 
-        	window.onload = displayCurrentDate;
-    		</script>
-
-		<h2 align="center"><a href="https://www.mediafire.com/file/sl1i5z3l1123uzq/com.apkmirror.helper.prod_2.0.3_%252841-d04e542%2529-41_minAPI23%2528arm64-v8a%252Carmeabi-v7a%252Cx86%252Cx86_64%2529%2528nodpi%2529_apkmirror.com.apk/file" </a> 安装 x </h2> <br>
-		<h2 align="center"><a href="https://www.mediafire.com/file/x1wgwy4twpx7f24/com.twitter.android_11.96.0-release.0-311960000_4arch_7dpi_24lang_548af0c95ad83a5c4ae8533d034a7499_apkmirror.com.apkm/file">下载 X </a></h2>
-
+        	 	   // 调用系统剪贴板 API
+	        	    navigator.clipboard.writeText(textToCopy)
+        		        .then(() => {
+                	    // 复制成功后的提示效果（可以改成 alert，或者更优雅的网页轻提示）
+	                    	alert('复制成功: ' + textToCopy);
+	                	})
+        		        .catch(err => {
+        	            console.error('复制失败: ', err);
+	                	});
+		        	}
+			</script>
 	</body>
 </html>
