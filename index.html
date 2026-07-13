@@ -4,71 +4,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>主页</title>
-		<style>
-			h1 {
-				text-align: center;
-			}
-			h2 {
-                                text-align: center;
-                        }
-					
-			body {
-				font-family: "Menlo", "PingFang SC", sans-serif;
-				
-				background-color: #6eb396;
-        	                color: #ffffff;
-	                        margin: 0;
-			}
-			
-			.text-center-box {
-				text-align: center;
-				padding: 20px;
-			}			
-			
-		/* 提升用户体验：鼠标悬停在段落上时显示为“小手”图标，并带有轻轻的变色提示 */
-        	p.copyable {
-	            cursor: pointer;
-        	    padding: 10px;
-	            background-color: #6eb396;
-	            transition: background-color 0.2s;
-        	    display: inline-block; /* 让背景色包裹文字长度 */
-	        }
-	        p.copyable:hover {
-        	    background-color: #e0f0ea; /* 鼠标悬停时加深 */
-        	}
-		</style>
 	</head>
 	<body>
-		<h1>这里不定时分享一些免费的网络/[节点]/[订阅链接]</h1>
-		<h2>复制下面的链接粘贴到软件, 即可访问国外的内容</h2>
-			
-			<div class="text-center-box">
-				<p>----------</p>
-	                	
-				<p class="copyable" onclick="copyText(this)">
-				https://23.94.184.78:2096/sub/e65pg8cgyq77y78x
-				</p>
-
-        	        	<p>----------</p>
-			</div>
-		
-
-			<script>
-			        // 2. 编写复制的核心逻辑
-		        	function copyText(element) {
-		            // 获取当前被点击元素内的文本内容
-		            const textToCopy = element.innerText;
-
-        	 	   // 调用系统剪贴板 API
-	        	    navigator.clipboard.writeText(textToCopy)
-        		        .then(() => {
-                	    // 复制成功后的提示效果（可以改成 alert，或者更优雅的网页轻提示）
-	                    	alert('复制成功: ' + textToCopy);
-	                	})
-        		        .catch(err => {
-        	            console.error('复制失败: ', err);
-	                	});
-		        	}
-			</script>
+		<h1>维护中...</h1>		
 	</body>
 </html>
